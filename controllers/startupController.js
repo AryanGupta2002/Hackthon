@@ -36,10 +36,10 @@ module.exports.startupRegister = async (req,res)=>{
   
   
         }catch(error) {
-            return res.status(500).json({ error });
+            return res.status(500).json({success: false, error:"Try Again"});
         }
      }catch(error) {
-        return res.status(500).json({ error });
+        return res.status(500).json({ success: false, error:"Try Again" });
      }
   }
 

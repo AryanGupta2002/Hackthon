@@ -7,7 +7,7 @@ const Company = require("../models/Company");
 module.exports.companyRegister = async (req,res)=>{
     const { name, email,password, domain,website} = req.body
     try{
-        const companyExist = await Company.findOne({ email });
+        const companyExist =  await Startup.findOne({ email }) ||  await Company.findOne({ email }) ||  await User.findOne({ email }) ;
   
         if (companyExist) {
             return res.status(200).json({

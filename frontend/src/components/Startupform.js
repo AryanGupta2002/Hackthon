@@ -1,8 +1,10 @@
 import React from 'react'
-// import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { Form } from 'semantic-ui-react';
 import { useState } from 'react';
-// import  axios from 'axios';
+import  axios from 'axios';
+
+
 function Startupform(){
   const[name,setname] = useState("");
   const[formerror,setformerror] = useState("");
@@ -11,9 +13,38 @@ function Startupform(){
   const[password,setpassword] = useState("");
   const[domain,setdomain] = useState(""); 
   const[uniqueId,setuniqueId] = useState(""); 
+
+  const [home, setHome] = useState(false);
+
+  if (home) {
+    return <Navigate to="/home" />;
+  }
+
+
+
   const handleSubmit = async (e) =>{
      e.preventDefault();
     // if(validate(name,number,email,password,skills,profession,cv)){
+      if(name&& email&& password&& domain&& uniqueId&& teamSize){
+        const res = await axios.post(`http://127.0.0.1:4000/startupRegister`, {
+        email: email,
+        name:name,
+        uniqueId:uniqueId,
+        domain:domain,
+        password: password,
+        teamSize:teamSize,
+      });
+      console.log(res.data.startup)
+      if(res.data.success == false){
+        window.alert(res.data.error)
+      }else{
+        localStorage.setItem("user", JSON.stringify(res.data.startup));
+        setHome(true);
+      }
+
+      }else{
+        window.alert("Fill all the fields")
+      }
      console.log(name,email,password,domain,uniqueId,teamSize);
    // }
   }
