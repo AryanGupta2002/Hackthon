@@ -3,7 +3,7 @@ import React from 'react'
 import { Form, } from 'semantic-ui-react';
 import { useState } from 'react';
 // import  axios from 'axios';
-function Spdform()  {
+function Spdform(){
   const initialvalues = { 
   name:"",
   number:"",
@@ -69,7 +69,7 @@ function Spdform()  {
      return errors;
   }
   return (
-      <div id = "internform" className='internpage'>
+      <div id = "spdform">
        <Form onSubmit={handleSubmit}>
        <br/>
        <Form.Field>
@@ -131,7 +131,7 @@ function Spdform()  {
         </Form.Field>
 
         <Form.Field>
-        <label for="cars"></label>
+        <label for="professions"></label>
         <select id="profession" name="profession"  
         value={formValues.profession} >
         <option value="Student">Student</option>

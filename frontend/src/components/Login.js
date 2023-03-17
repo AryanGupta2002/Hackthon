@@ -3,37 +3,33 @@ import { Form,Button } from 'semantic-ui-react'
 import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
 function Login() {
-    const initialvalues = {email:"",password:""};
-    const[formValues,setformValues] = useState({initialvalues});
     const[formerror,setformerror] = useState({});
     const[GotoCompanypage,setGotoCompanypage] = useState(false);
+    const[getEmail,setEmail] = useState("");
+    const[getPassword,setPassword] = useState("");
     
     if(GotoCompanypage)
     {
       return <Navigate to="/comporstrtup" />
     }
-    const validate = (values) =>{
+    const validate = (email,password) =>{
         const errors = {};
-           if(!values.email)
+           if(!email)
            {
             errors.email = "E-mail is required."
            }
-           if(!values.password)
+           if(!password)
            {
             errors.password = "Password is required."
            }
            return errors
         }
-     const handleChange = (e) =>
-         {
-        const{name,value} = e.target;
-        setformValues({...formValues,[name]:value})
-         }
     const onSignInSubmit = (e) =>
       {
         e.preventDefault();
-        setformerror(validate(formValues)); 
-
+        setformerror(validate(getEmail,getPassword)); 
+        console.log(getEmail);
+        console.log(getPassword);
        }
     
   return (
@@ -45,16 +41,16 @@ function Login() {
         <input type = "text" 
         placeholder='E-mail'
         name='email'
-        value={formValues.email}
-        onChange={handleChange}></input>
+        value={getEmail}
+        onChange={(e) =>{setEmail(e.target.value)}}></input>
         <span id = "check">{formerror.email}</span>
         </Form.Field>
         <Form.Field>
             <input type="password"
             placeholder ="Password"
             name='password'
-            value={formValues.password}
-            onChange={handleChange}></input>
+            value={getPassword}
+            onChange={(e) => {setPassword(e.target.value)}}></input>
             <span id = "check">{formerror.password}</span>
         </Form.Field>
         <Button id = "subbutton" onClick={onSignInSubmit} >Login</Button>
