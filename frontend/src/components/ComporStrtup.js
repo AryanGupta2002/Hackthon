@@ -11,11 +11,20 @@ const navigate = useNavigate();
       <h3 id="titleforcs" class="text-4xl font-medium text-center mr-4" >Are you a <br></br>
       </h3>
       <br></br>
-      <button id = "companybutton"class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      <button id = "companybutton"
+      class="bg-transparent hover:bg-blue-500 
+      text-blue-700 font-semibold hover:text-white 
+      py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+      onClick={() => {navigate('/companyform');}}
+      >
       Company
     </button>
     <span id = "or" class ="text-4xl font-medium mr-4 ml-4">or</span>
-    <button id="startupbutton" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+    <button id="startupbutton" class="bg-transparent
+     hover:bg-blue-500 text-blue-700 font-semibold 
+     hover:text-white py-2 px-4 border border-blue-500 
+     hover:border-transparent rounded"
+     onClick={() => {navigate('/startupform');}} >
       Startup
   </button>
   <p class="ml-2"> Not either ?

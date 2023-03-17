@@ -160,7 +160,7 @@ function Login() {
                     setGotoCompanypage(true);
                   }}
                 >
-                  Click here to signup.
+                  Click here !
                 </span>
               </span>
             </div>

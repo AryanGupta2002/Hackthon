@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { Form } from 'semantic-ui-react';
 import { useState } from 'react';
 import  axios from 'axios';
+import './spdformstylesheet.css'
 
 function Spdform(){
   const[formerror,setformerror] = useState({});
@@ -107,15 +108,6 @@ function Spdform(){
            <span id = "check">{formerror.password}</span>
         </Form.Field>
         
-        <Form.Field>
-        <input type ="textarea"
-         id = "skillset"
-          placeholder ="Enter skills"
-          name='skills'
-          value={skills}
-          onChange={(e) => {setskills(e.target.value)}}/>
-            <span id = "check">{formerror.skills}</span>
-        </Form.Field>
 
         <Form.Field>
         <input type ="url"
@@ -126,7 +118,17 @@ function Spdform(){
           onChange={(e) => {setcv(e.target.value)}}/>
             <span id = "check">{formerror.cv}</span>
         </Form.Field>
-
+         
+        <Form.Field>
+        <input type ="textarea"
+         id = "skillset"
+          placeholder ="Enter skills"
+          name='skills'
+          value={skills}
+          onChange={(e) => {setskills(e.target.value)}}/>
+            <span id = "check">{formerror.skills}</span>
+        </Form.Field>
+        
         <Form.Field>
         <label for="professions"></label>
         <select id="profession" name="profession"  
