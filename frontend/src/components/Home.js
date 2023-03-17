@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import Profile from "./dummy.png";
 import Avatar from "@mui/material/Avatar";
+import Post from "./Post"
 import x from "./2.jpg"
 import y from "./3.jpg"
 import z from "./download.jpg"
@@ -18,12 +19,12 @@ function Home() {
   }, []);
 
   return (
-    <div id="home" className="w-[100vw] h-[100vh] bg-gray-200">
+    <div id="home" className="w-[100vw] h-[100%] bg-gray-200">
       <div>
         <NavBar />
       </div>
       <div className="flex">
-        <div className="left w-[25%]">
+        <div className="left w-[25%] ml-10">
           <div className="w-[80%] m-4 ">
             <div className="bg-white rounded">
               <ul className="text-center content-center">
@@ -112,6 +113,15 @@ function Home() {
 
 
         <div className="center w-[50%]">
+
+
+        <Post/>
+        <Post/>
+        <Post/>
+        <Post/>
+
+
+
 
         </div>
 
