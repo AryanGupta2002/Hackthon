@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Spdform from './components/Spdform';
 import Startupform from './components/Startupform';
 import Companyform from './components/Companyform';
+import Home from './components/Home';
 // import Otpinput from './Otpinput';
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='spdform' element={<Spdform />} />
         <Route path='companyform' element={<Companyform />} />
         <Route exact path='startupform' element={<Startupform />} />
+        <Route exact path='home' element={<Home />} />
       </Routes>
       </BrowserRouter>
   

@@ -9,12 +9,16 @@ function Login() {
   const [formValues, setformValues] = useState({ initialvalues });
   const [formerror, setformerror] = useState({});
   const [GotoCompanypage, setGotoCompanypage] = useState(false);
+  const [home, setHome] = useState(false)
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   if (GotoCompanypage) {
     return <Navigate to="/comporstrtup" />;
+  }
+  if (home) {
+    return <Navigate to="/home" />;
   }
   const validate = (values) => {
     const errors = {};
@@ -25,18 +29,27 @@ function Login() {
       errors.password = "Password is required.";
     }
   };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setformValues({ ...formValues, [name]: value });
-  };
+
   const onSignInSubmit = async (e) => {
     e.preventDefault();
-    // setformerror(validate(formValues));
     console.log(password,email)
     // if(Object.keys(validate(formValues)).length === 0){
     //   console.log("first")
+    if(password && email){ 
       const res = await axios.post(`http://127.0.0.1:4000/login`,{email:email,password:password});
-      console.log(res,"dsaf")
+      console.log(res.data.user)
+      if(res.data.success == false){
+        window.alert("Wrong Credentials")
+      }
+      else{
+        console.log(res.data.user)
+        localStorage.setItem("user",JSON.stringify(res.data.user))
+        setHome(true)
+      }
+    }
+    else{
+      window.alert("Fill Fields Carefully")
+    }
     // }
   };
 

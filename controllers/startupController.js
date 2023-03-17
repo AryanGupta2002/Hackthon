@@ -55,17 +55,12 @@ module.exports.startupRegister = async (req,res)=>{
             .json({ success: true, user});
         }else{ 
           return res.status(200).json({
-            errors: [
-              {
-                msg: "Wrong username or password",
-              },
-            ],
-            email: email,
+            success: false,
           });
         }
       }
       else {
-        return res.status(200).json({email:"Wrong username or password"})
+        return res.status(200).json({success: false})
       }
     }catch(e){
       return res.status(500).json({e})
