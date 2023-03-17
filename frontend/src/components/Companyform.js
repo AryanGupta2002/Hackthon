@@ -40,7 +40,7 @@ function Companyform() {
         setHome(true);
       }
     }else{
-      window.alert("Fill all the field")
+      window.alert("Fill all the fields")
     }
     // }
   };

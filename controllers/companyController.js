@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const Company = require("../models/Company");
-
-
+const Startup = require("../models/Startup");
+const User = require("../models/User");
 
 
 module.exports.companyRegister = async (req,res)=>{

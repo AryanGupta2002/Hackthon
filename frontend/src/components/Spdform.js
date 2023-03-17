@@ -1,8 +1,9 @@
 import React from 'react'
-// import { Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { Form } from 'semantic-ui-react';
 import { useState } from 'react';
-// import  axios from 'axios';
+import  axios from 'axios';
+
 function Spdform(){
   const[formerror,setformerror] = useState({});
   const[name,setname] = useState("");
@@ -12,10 +13,38 @@ function Spdform(){
   const[password,setpassword] = useState("");
   const[cv,setcv] = useState("");
   const[profession,setprofession] = useState("");
+  const [home, setHome] = useState(false);
+
+
+  if (home) {
+    return <Navigate to="/home" />;
+  }
+
+
  
   const handleSubmit = async (e) =>{
      e.preventDefault();
     // if(validate(name,number,email,password,skills,profession,cv)){
+      if (name&&number&&email&&password&&skills&&profession&&cv){
+        const res = await axios.post(`http://127.0.0.1:4000/userRegister`, {
+        email: email,
+        name:name,
+        number:number,
+        skills:skills,
+        profession:profession,
+        cv:cv,
+        password: password,
+      });
+      console.log(res.data.user)
+      if (res.data.success == false){
+        window.alert(res.data.error)
+      }else{
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        setHome(true);
+      }
+      }else{
+        window.alert("Fill all the fields")
+      }
      console.log(name,number,email,password,skills,profession,cv);
    // }
   }

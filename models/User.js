@@ -28,7 +28,7 @@ const userSchema = new Schema(
         requried:true,
     },
     skills: {
-      type: [String],
+      type: String,
     },
 
   },

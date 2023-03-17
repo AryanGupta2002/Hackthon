@@ -1,6 +1,7 @@
 const User = require("../models/User")
+const Startup = require("../models/Startup")
+const Company = require("../models/Company")
 const jwt = require("jsonwebtoken");
-const Company = require("../models/Company");
 
 
 
@@ -13,11 +14,11 @@ const Company = require("../models/Company");
 module.exports.userRegister = async (req,res)=>{
     const { name, email,password, cv, phone, profession, skills } = req.body
     try{
-        const userExist = await User.findOne({ email });
+        const userExist = await Startup.findOne({ email }) ||  await Company.findOne({ email }) ||  await User.findOne({ email }) ;
 
         if (userExist) {
             return res.status(200).json({
-              errors: [{ msg: "Email already exists" }],
+              success:false, error:"Email already Exist"
             });
           }
           try {
@@ -42,10 +43,12 @@ module.exports.userRegister = async (req,res)=>{
 
 
         }catch(error) {
-            return res.status(500).json({ error });
+          console.log(error)
+            return res.status(200).json({ success: false, error:"Try Again" });
         }
      }catch(error) {
-        return res.status(500).json({ error });
+      console.log(error)
+        return res.status(200).json({ success: false, error:"Try Again" });
      }
 }
 
