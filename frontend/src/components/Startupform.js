@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { Form } from 'semantic-ui-react';
 import { useState } from 'react';
 import  axios from 'axios';
-
+import './startupstylesheet.css'
 
 function Startupform(){
   const[name,setname] = useState("");
@@ -35,7 +35,7 @@ function Startupform(){
         teamSize:teamSize,
       });
       console.log(res.data.startup)
-      if(res.data.success == false){
+      if(res.data.success === false){
         window.alert(res.data.error)
       }else{
         localStorage.setItem("user", JSON.stringify(res.data.startup));

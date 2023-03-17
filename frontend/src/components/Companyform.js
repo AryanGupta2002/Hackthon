@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate } from 'react-router-dom';
-import { Form } from "semantic-ui-react";
+import { Form, FormField } from "semantic-ui-react";
 import { useState } from "react";
 import  axios from 'axios';
-
+import './companystylesheet.css'
 
 
 function Companyform() {
@@ -131,9 +131,11 @@ function Companyform() {
           <span id="check">{formerror.cv}</span>
         </Form.Field>
 
-        <input type="submit" id="subbutton"></input>
+        <input type="submit"    
+        id="subbutton"></input>
       </Form>
     </div>
+    
   );
 }
 export default Companyform;
