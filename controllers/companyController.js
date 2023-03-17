@@ -11,7 +11,7 @@ module.exports.companyRegister = async (req,res)=>{
   
         if (companyExist) {
             return res.status(200).json({
-              errors: [{ msg: "Email already exists" }],
+              success:false, error:"Email already Exist"
             });
           }
           try {
@@ -34,9 +34,9 @@ module.exports.companyRegister = async (req,res)=>{
   
   
         }catch(error) {
-            return res.status(500).json({ error });
+            return res.status(200).json({success: false, error:"Try Again"});
         }
      }catch(error) {
-        return res.status(500).json({ error });
+        return res.status(200).json({success: false, error:"Try Again"});
      }
   }

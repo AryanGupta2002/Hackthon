@@ -8,7 +8,7 @@ function Home() {
     console.log(user) 
 
     useEffect(() => {
-        setUser(JSON.parse(localStorage.getItem(user)))
+        setUser(JSON.parse(localStorage.getItem("user")))
         console.log(user)
       }, [])
     
