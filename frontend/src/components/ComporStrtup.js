@@ -7,14 +7,14 @@ const navigate = useNavigate();
   return (
     <div className = "companyorstartup">
     <br/>
-    <h3 id="titleforcs" >Are you a ?<br></br>
+    <h3 id="titleforcs" >Are you a comapny or a startup?<br></br>
     </h3>
-     <button id = "companybutton" onClick={() => {navigate('/companyform');}}>Company</button>
-     <button id = "startupbutton" onClick={() => {navigate('/startupform');}}>Start up</button>
-     <span id = "noforcs"
-            onClick={() => {navigate('/StudProfDev');}}>
-            Not Either
-     </span>
+     <button id = "companybutton" onClick={() => {navigate('/companyform');}}>Yes</button>
+     <button id = "startupbutton" onClick={() => {navigate('/startupform');}}>No</button>
+     <p id = "noforcs"
+            onClick={() => {navigate('/spdform');}}>
+            Not Either ? Click here
+     </p>
     </div>
   )
 }
