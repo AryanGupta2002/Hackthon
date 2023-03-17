@@ -37,11 +37,13 @@ function Login() {
     //   console.log("first")
     if(password && email){ 
       const res = await axios.post(`http://127.0.0.1:4000/login`,{email:email,password:password});
-      console.log(res.data)
+      console.log(res.data.user)
       if(res.data.success == false){
         window.alert("Wrong Credentials")
       }
       else{
+        console.log(res.data.user)
+        localStorage.setItem("user",JSON.stringify(res.data.user))
         setHome(true)
       }
     }
