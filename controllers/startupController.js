@@ -45,6 +45,7 @@ module.exports.startupRegister = async (req,res)=>{
 
   module.exports.login = async (req,res) =>{
     const {email,password} = req.body
+    console.log(email,password)
     try{
       const user = await Startup.findOne({ email:email.toLowerCase() }) ||  await Company.findOne({email:email.toLowerCase()}) ||  await User.findOne({ email:email.toLowerCase()}) ;
       if (user){
