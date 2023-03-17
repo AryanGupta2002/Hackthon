@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 const mongoose = require("mongoose");
-const userSchema = new Schema(
+const companySchema = new Schema(
   {
     name: {
       type: String,
@@ -11,7 +11,7 @@ const userSchema = new Schema(
       type: String,
       default: null,
     },
-    phone: {
+    domain: {
       type: String,
       default: null,
     },
@@ -19,20 +19,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    profession: {
+    website: {
         type: String,
         required:true,
     },
-    cv: {
-        type:String,
-        requried:true,
-    },
-    skills: {
-      type: [String],
-    },
-
   },
   { timestamps: true }
 );
 
-module.exports = model("user", userSchema);
+module.exports = model("company", companySchema);

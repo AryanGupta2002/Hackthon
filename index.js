@@ -4,6 +4,7 @@ const app = express();
 require('dotenv').config();
 const connect = require("./config/db");
 const userRoutes = require("./routes/userRoutes")
+const companyRoutes = require("./routes/companyRoutes")
 
 const path = require("path");
 const cookieParser = require('cookie-parser');
@@ -33,3 +34,4 @@ const server = app.listen(PORT, () => {
   })
   
 app.use("/", userRoutes);
+app.use("/", companyRoutes);
