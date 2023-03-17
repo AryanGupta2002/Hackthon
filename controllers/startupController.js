@@ -50,22 +50,18 @@ module.exports.startupRegister = async (req,res)=>{
       const user = await Startup.findOne({ email:email.toLowerCase() }) ||  await Company.findOne({email:email.toLowerCase()}) ||  await User.findOne({ email:email.toLowerCase()}) ;
       if (user){
         if (password === user.password){
+          localStorage.setItem(user)
           res
             .status(200)
             .json({ success: true, user});
         }else{ 
           return res.status(200).json({
-            errors: [
-              {
-                msg: "Wrong username or password",
-              },
-            ],
-            email: email,
+            success: false,
           });
         }
       }
       else {
-        return res.status(200).json({email:"Wrong username or password"})
+        return res.status(200).json({success: false})
       }
     }catch(e){
       return res.status(500).json({e})
