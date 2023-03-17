@@ -1,73 +1,41 @@
 import React from 'react'
 // import { Navigate } from 'react-router-dom';
-import { Form, } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import { useState } from 'react';
 // import  axios from 'axios';
 function Spdform(){
-  const initialvalues = { 
-  name:"",
-  number:"",
-  email:"",
-  skills:"",
-  password:"",
-  profession:"",
-  cv:""
-  };
-  const [formValues,setformValues] = useState({initialvalues});
   const[formerror,setformerror] = useState({});
-  const handleChange = (e) =>{
-    const{name,value} = e.target;
-    setformValues({...formValues,[name]:value})
-  }
+  const[name,setname] = useState("");
+  const[number,setnumber] = useState("");
+  const[email,setemail] = useState("");
+  const[skills,setskills] = useState("");
+  const[password,setpassword] = useState("");
+  const[cv,setcv] = useState("");
+  const[profession,setprofession] = useState("");
+ 
   const handleSubmit = async (e) =>{
      e.preventDefault();
-     setformerror(validate(formValues));
-     console.log(formValues);
+    // if(validate(name,number,email,password,skills,profession,cv)){
+     console.log(name,number,email,password,skills,profession,cv);
+   // }
   }
-  const validate = (values)=>{
-     const errors = {};
-     const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-     const regex2 = /^[0-9]{10}$/;
-     if(!values.name){
-      errors.name = "Name is required."
-     }
-     if(!values.number){
-      errors.number = "Number is required."
-     }
-     if(!values.cv){
-        errors.cv = "CV is required."
-       }
-     if(!values.profession){
-      errors.profession = "Profession is required."
-     }
-     if(!values.email){
-      errors.email = "E-mail is required."
-     }
-     if(!values.password)
-     {
-      errors.password = "Password is required."
-     }
-     if(!values.cv)
-     {
-      errors.password = "CV is required."
-     }
-     if(!values.skills){
-      errors.skills = "Skillset is required."
-     } 
-     if(values.email){
-     if(!regex.test(values.email))
-     {
-      errors.email = "Invalid E-mail."
-     }
-    }
-     if(values.number){
-     if(!regex2.test(values.number))
-     {
-      errors.number = "Invalid Phone Number."
-     }
-    }
-     return errors;
-  }
+//   const validate = (name,number,email,password,skills,profession,cv)=>{
+//      const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+//      const regex2 = /^[0-9]{10}$/;
+//      if(name && email && password && skills && profession && cv && number)
+//      {
+//         // if(!regex.test(email) &&  !regex2.test(number))
+//         // {
+//             return true;
+//         //}
+//      }
+//      else
+//      {
+//         window.alert("Fill all details correctly")
+//      }
+    
+//   }
+
   return (
       <div id = "spdform">
        <Form onSubmit={handleSubmit}>
@@ -77,8 +45,8 @@ function Spdform(){
         <input type="text" 
         placeholder='Name' 
         name='name' 
-        value={formValues.name}
-        onChange={handleChange}/>
+        value={name}
+        onChange={(e) => {setname(e.target.value)}}/>
         <span id = "check">{formerror.name}</span>
         </Form.Field>
 
@@ -86,8 +54,8 @@ function Spdform(){
         <input type="text" 
         placeholder='Phone 000-000-0000' 
         name='number' 
-        value={formValues.number}
-        onChange={handleChange}/>
+        value={number}
+        onChange={(e) => {setnumber(e.target.value)}}/>
          <span id = "check">{formerror.number}</span>
         </Form.Field>
 
@@ -96,8 +64,8 @@ function Spdform(){
         <input type="text"
          placeholder='E-mail'
           name='email' 
-          value={formValues.email}
-          onChange={handleChange}/>
+          value={email}
+          onChange={(e) => {setemail(e.target.value)}}/>
            <span id = "check">{formerror.email}</span>
         </Form.Field>
     
@@ -105,8 +73,8 @@ function Spdform(){
         <input type="password"
          placeholder='Password'
           name='password' 
-          value={formValues.password}
-          onChange={handleChange}/>
+          value={password}
+          onChange={(e) => {setpassword(e.target.value)}}/>
            <span id = "check">{formerror.password}</span>
         </Form.Field>
         
@@ -115,8 +83,8 @@ function Spdform(){
          id = "skillset"
           placeholder ="Enter skills"
           name='skills'
-          value={formValues.skills}
-          onChange={handleChange}/>
+          value={skills}
+          onChange={(e) => {setskills(e.target.value)}}/>
             <span id = "check">{formerror.skills}</span>
         </Form.Field>
 
@@ -125,15 +93,15 @@ function Spdform(){
          id = "cv"
           placeholder ="Link for CV"
           name='cv'
-          value={formValues.cv}
-          onChange={handleChange}/>
+          value={cv}
+          onChange={(e) => {setcv(e.target.value)}}/>
             <span id = "check">{formerror.cv}</span>
         </Form.Field>
 
         <Form.Field>
         <label for="professions"></label>
         <select id="profession" name="profession"  
-        value={formValues.profession} >
+        value={profession} onChange = {(e) => {setprofession(e.target.value)}}>
         <option value="Student">Student</option>
         <option value="Professor">Professor</option>
         <option value="Developer">Developer</option>
@@ -143,5 +111,5 @@ function Spdform(){
         </Form>
     </div>
   )
-}
+  }
 export default Spdform
