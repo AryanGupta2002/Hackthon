@@ -13,7 +13,7 @@ function Spdform(){
   const[skills,setskills] = useState("");
   const[password,setpassword] = useState("");
   const[cv,setcv] = useState("");
-  const[profession,setprofession] = useState("");
+  const[profession,setprofession] = useState("Student");
   const [home, setHome] = useState(false);
 
 
@@ -25,6 +25,8 @@ function Spdform(){
  
   const handleSubmit = async (e) =>{
      e.preventDefault();
+     console.log(name,number,email,password,skills,profession,cv);
+
     // if(validate(name,number,email,password,skills,profession,cv)){
       if (name&&number&&email&&password&&skills&&profession&&cv){
         const res = await axios.post(`http://127.0.0.1:4000/userRegister`, {

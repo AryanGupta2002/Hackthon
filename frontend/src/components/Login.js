@@ -97,14 +97,14 @@ function Login() {
     //   </div>
     // </div>
 
-    <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div class="w-full max-w-md space-y-8">
+    <div class="flex min-h-full h-[100vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div class=" space-y-8">
         <div>
-          <img
+          {/* <img
             class="mx-auto h-12 w-auto"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
             alt="Your Company"
-          />
+          /> */}
           <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -123,7 +123,7 @@ function Login() {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  class="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  placeholder:pl-2"
+                  class="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 pl-2 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6  placeholder:pl-2"
                 />
               </Form.Field>
             </div>
@@ -137,7 +137,7 @@ function Login() {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  class="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:pl-2"
+                  class="relative block w-full rounded-b-md pl-2 border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:pl-2 my"
                   placeholder="Password"
                 />
               </Form.Field>
@@ -160,7 +160,7 @@ function Login() {
                     setGotoCompanypage(true);
                   }}
                 >
-                  Click here !
+                  Click here!
                 </span>
               </span>
             </div>
