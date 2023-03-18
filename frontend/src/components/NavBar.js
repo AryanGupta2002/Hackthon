@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Profile from './dummy.png'
 import {Link,Navigate} from "react-router-dom"
 
+import { Form, FormField } from "semantic-ui-react";
+
 function NavBar() {
 
+  const[filename,setfilename] = useState("");
   const handleApplication =() => {
     console.log("first")
     // if(app == "hidden"){
@@ -15,6 +18,20 @@ function NavBar() {
     <div id="navBar">
 <nav class="flex justify-between px-20 py-6 items-center bg-white">
   <h1 class="text-xl text-gray-800 font-bold"><Link to="/home">Easy Connect </Link></h1>
+  <div>
+    <Form>
+      <FormField>
+       <input type = "file"
+       value={filename}
+       onChange={(e) => {
+        setfilename(e.target.value);
+      }}
+       name = 'filename'
+       
+       ></input>
+      </FormField>
+    </Form>
+  </div>
   <div class="flex items-center">
     <div class="flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pt-0.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
