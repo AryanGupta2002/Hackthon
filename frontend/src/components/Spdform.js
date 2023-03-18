@@ -11,6 +11,7 @@ function Spdform(){
   const[number,setnumber] = useState("");
   const[email,setemail] = useState("");
   const[skills,setskills] = useState("");
+  const[regno,setregno] = useState("");
   const[password,setpassword] = useState("");
   const[cv,setcv] = useState("");
   const[profession,setprofession] = useState("Student");
@@ -25,10 +26,10 @@ function Spdform(){
  
   const handleSubmit = async (e) =>{
      e.preventDefault();
-     console.log(name,number,email,password,skills,profession,cv);
+     console.log(name,number,email,password,skills,profession,cv,regno);
 
     // if(validate(name,number,email,password,skills,profession,cv)){
-      if (name&&number&&email&&password&&skills&&profession&&cv){
+      if (name&&number&&email&&password&&skills&&profession&&cv&&regno){
         const res = await axios.post(`http://127.0.0.1:4000/userRegister`, {
         email: email,
         name:name,
@@ -37,6 +38,7 @@ function Spdform(){
         profession:profession,
         cv:cv,
         password: password,
+        regno: regno
       });
       console.log(res.data.user)
       if (res.data.success == false){
@@ -100,7 +102,25 @@ function Spdform(){
           onChange={(e) => {setemail(e.target.value)}}/>
            <span id = "check">{formerror.email}</span>
         </Form.Field>
-    
+         
+        <Form.Field>
+        <label for="professions"></label>
+        <select id="profession" name="profession"  
+        value={profession} onChange = {(e) => {setprofession(e.target.value)}}>
+        <option value="Student">Student</option>
+        <option value="Professor">Professor</option>
+        <option value="Developer">Developer</option>
+        </select>
+        </Form.Field>
+        
+        <Form.Field>
+        <input type="number"
+         placeholder='Registeration no.'
+          name='regno' 
+          value={regno}
+          onChange={(e) => {setregno(e.target.value)}}/>
+        </Form.Field>
+
         <Form.Field>
         <input type="password"
          placeholder='Password'
@@ -131,15 +151,7 @@ function Spdform(){
             <span id = "check">{formerror.skills}</span>
         </Form.Field>
         
-        <Form.Field>
-        <label for="professions"></label>
-        <select id="profession" name="profession"  
-        value={profession} onChange = {(e) => {setprofession(e.target.value)}}>
-        <option value="Student">Student</option>
-        <option value="Professor">Professor</option>
-        <option value="Developer">Developer</option>
-        </select>
-        </Form.Field>
+        
         <input type="submit" id = "subbutton"></input>
         </Form>
     </div>
