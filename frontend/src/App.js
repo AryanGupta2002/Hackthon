@@ -1,3 +1,4 @@
+
 import './App.css';
 import ComporStrtup from './components/ComporStrtup';
 import Login from './components/Login';
@@ -7,6 +8,7 @@ import Spdform from './components/Spdform';
 import Startupform from './components/Startupform';
 import Companyform from './components/Companyform';
 import Home from './components/Home';
+import Workspace from './components/Workspace';
 // import Otpinput from './Otpinput';
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path='companyform' element={<Companyform />} />
         <Route exact path='startupform' element={<Startupform />} />
         <Route exact path='home' element={<Home />} />
+        <Route exact path='workspace' element={<Workspace />} />
       </Routes>
       </BrowserRouter>
   

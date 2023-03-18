@@ -12,7 +12,7 @@ const jwt = require("jsonwebtoken");
 
 
 module.exports.userRegister = async (req,res)=>{
-    const { name, email,password, cv, phone, profession, skills } = req.body
+    const { name, email,password, cv, phone, profession, skills,regno } = req.body
     try{
         const userExist = await Startup.findOne({ email }) ||  await Company.findOne({ email }) ||  await User.findOne({ email }) ;
 
@@ -29,7 +29,8 @@ module.exports.userRegister = async (req,res)=>{
               cv,
               phone,
               profession,
-              skills
+              skills,
+              regno,
             });
 
         //     const token = createToken(user);

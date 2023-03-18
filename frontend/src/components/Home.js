@@ -108,6 +108,48 @@ function Home() {
                 <hr />
               </ul>
             </div>
+
+            <div className="bg-white mt-8 rounded">
+              <ul className="text-center content-center">
+                <p className="text-3xl font-serif">Alumni</p>
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={Profile}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">Rajan Singh</p>
+                </li>
+                <hr />
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={x}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">Rohan Mehra</p>
+                </li>
+                <hr />
+                <li className="pt-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={y}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">Kartik Tyagi</p>
+                </li>
+                <hr />
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={z}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">Vaibhav Reddy</p>
+                </li>
+                <hr />
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -206,6 +248,48 @@ function Home() {
                     sx={{ width: 24, height: 24 }}
                   />{" "}
                   <p className="pl-2 mb-2">Aryan Gupta</p>
+                </li>
+                <hr />
+              </ul>
+            </div>
+
+            <div className="bg-white mt-8 rounded">
+              <ul className="text-center content-center">
+                <p className="text-3xl font-serif">Colleges</p>
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={z}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">BITS Pilani</p>
+                </li>
+                <hr />
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={x}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">NIT Suratkal</p>
+                </li>
+                <hr />
+                <li className="pt-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={Profile}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">MIT Jaipur</p>
+                </li>
+                <hr />
+                <li className="pt-1 pb-1 flex items-center justify-center">
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={z}
+                    sx={{ width: 24, height: 24 }}
+                  />{" "}
+                  <p className="pl-2 mb-2">RV College</p>
                 </li>
                 <hr />
               </ul>
