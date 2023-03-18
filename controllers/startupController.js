@@ -70,7 +70,7 @@ module.exports.startupRegister = async (req,res)=>{
 
   module.exports.allStartup = async (req,res) =>{
     try{
-      const allStartups = await Startup.find({profession:"alumni"})
+      const allStartups = await Startup.find()
       if(allStartups){
         return res.status(200).json({success:true, allStartups})
       }else{
@@ -78,5 +78,16 @@ module.exports.startupRegister = async (req,res)=>{
       }
     }catch(e){
       return res.status(500).json({success:false,error:e})
+    }
+  }
+
+
+  module.exports.searchUserById = async (req,res) => {
+    const {id} = req.body
+    try{
+      const user = await Startup.findOne({  _id: id}) ||  await Company.findOne({  _id: id}) ||  await User.findOne({  _id: id}) ;
+      return res.status(200).json({user})
+    }catch(e){
+      console.log(e)
     }
   }

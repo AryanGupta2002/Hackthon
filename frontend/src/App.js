@@ -30,7 +30,7 @@ function App() {
         <Route exact path='startupform' element={<Startupform />} />
         <Route exact path='home' element={<Home />} />
         <Route exact path='workspace' element={<Workspace />} />
-        <Route path='profile-spd' element={<Profilespd />} />
+        <Route path='profile-spd/:userId' element={<Profilespd />} />
         <Route path='my-profile' element={<MyProfile />} />
         <Route path='profile-company' element={<Profilecompany />} />
         <Route path='alumni' element={<Alumni />} />
