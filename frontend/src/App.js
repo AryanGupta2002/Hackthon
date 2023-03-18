@@ -12,6 +12,7 @@ import ProfileCollege from './components/ProfileCollege';
 import ProfileStartup from './components/ProfileStartup';
 import Profilecompany from './components/Profilecompany';
 import Profilespd from './components/Profilespd';
+
 // import Otpinput from './Otpinput';
 import Workspace from './components/Workspace';
 import MyProfile from './components/MyProfile';
@@ -35,6 +36,7 @@ function App() {
         <Route path='alumni' element={<Alumni />} />
         <Route path='profile-college' element={<ProfileCollege />} />
         <Route path='profile-startup' element={<ProfileStartup />} />
+     
       </Routes>
       </BrowserRouter>
   
