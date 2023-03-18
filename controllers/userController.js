@@ -53,5 +53,62 @@ module.exports.userRegister = async (req,res)=>{
      }
 }
 
+module.exports.allStudent = async (req,res) =>{
+  try{
+    const allStudents = await User.find({profession:"Student"})
+    if(allStudents){
+      return res.status(200).json({success:true, allStudents})
+    }else{
+      return res.status(200).json({success:false, error:"No Students Found"})
+    }
+  }catch(e){
+    return res.status(500).json({success:false,error:e})
+  }
+}
+
+
+
+module.exports.allDeveloper = async (req,res) =>{
+  try{
+    const allDevelopers = await User.find({profession:"Developer"})
+    if(allDevelopers){
+      return res.status(200).json({success:true, allDevelopers})
+    }else{
+      return res.status(200).json({success:false, error:"No Students Found"})
+    }
+  }catch(e){
+    return res.status(500).json({success:false,error:e})
+  }
+}
+
+
+
+
+module.exports.allProfessor = async (req,res) =>{
+  try{
+    const allProfessors = await User.find({profession:"Professor"})
+    if(allProfessors){
+      return res.status(200).json({success:true, allProfessors})
+    }else{
+      return res.status(200).json({success:false, error:"No Students Found"})
+    }
+  }catch(e){
+    return res.status(500).json({success:false,error:e})
+  }
+}
+
+
+module.exports.allAlumni = async (req,res) =>{
+  try{
+    const allAlumnis = await User.find({profession:"Alumni"})
+    if(allAlumnis){
+      return res.status(200).json({success:true, allAlumnis})
+    }else{
+      return res.status(200).json({success:false, error:"No Students Found"})
+    }
+  }catch(e){
+    return res.status(500).json({success:false,error:e})
+  }
+}
 
 

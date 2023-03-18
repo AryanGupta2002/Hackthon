@@ -40,3 +40,16 @@ module.exports.companyRegister = async (req,res)=>{
         return res.status(200).json({success: false, error:"Try Again"});
      }
   }
+
+  module.exports.allCompany = async (req,res) =>{
+    try{
+      const allCompanies = await User.find({profession:"alumni"})
+      if(allCompanies){
+        return res.status(200).json({success:true, allCompanies})
+      }else{
+        return res.status(200).json({success:false, error:"No Companys Found"})
+      }
+    }catch(e){
+      return res.status(500).json({success:false,error:e})
+    }
+  }
