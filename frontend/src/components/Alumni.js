@@ -94,10 +94,10 @@ function Alumni({user}) {
         <div className="center w-[50%]">
 
 
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+        <Post img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OL4NINhivu2Ho6cnvj14NKY8Cv7vaifG0Q&usqp=CAU"}/>
+        <Post img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OL4NINhivu2Ho6cnvj14NKY8Cv7vaifG0Q&usqp=CAU"}/>
+        <Post img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OL4NINhivu2Ho6cnvj14NKY8Cv7vaifG0Q&usqp=CAU"}/>
+        <Post img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8OL4NINhivu2Ho6cnvj14NKY8Cv7vaifG0Q&usqp=CAU"}/>
 
 
 

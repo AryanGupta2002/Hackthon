@@ -67,48 +67,7 @@ function Spdform(){
       } 
     });
   }
-  // firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings)
-  // .then(() => {
-  //   // The link was successfully sent. Inform the user.
-  //   // Save the email locally so you don't need to ask the user for it again
-  //   // if they open the link on the same device.
-  //   window.localStorage.setItem('emailForSignIn', email);
-  //   // ...
-  // })
-  // .catch((error) => {
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   // ...
-  // });
 
-  // if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
-  //   // Additional state parameters can also be passed via URL.
-  //   // This can be used to continue the user's intended action before triggering
-  //   // the sign-in operation.
-  //   // Get the email if available. This should be available if the user completes
-  //   // the flow on the same device where they started it.
-  //   var useremail = window.localStorage.getItem('emailForSignIn');
-  //   if (!email) {
-  //     // User opened the link on a different device. To prevent session fixation
-  //     // attacks, ask the user to provide the associated email again. For example:
-  //     email = window.prompt('Please provide your email for confirmation');
-  //   }
-  //   // The client SDK will parse the code from the link for you.
-  //   firebase.auth().signInWithEmailLink(email, window.location.href)
-  //     .then((result) => {
-  //       // Clear email from storage.
-  //       window.localStorage.removeItem('emailForSignIn');
-  //       // You can access the new user via result.user
-  //       // Additional user info profile not available via:
-  //       // result.additionalUserInfo.profile == null
-  //       // You can check if the user is new or existing:
-  //       // result.additionalUserInfo.isNewUser
-  //     })
-  //     .catch((error) => {
-  //       // Some error occurred, you can inspect the code: error.code
-  //       // Common errors could be invalid email and invalid or expired OTPs.
-  //     });
-  // }
 
   const incorrectnumber = () => {
     console.log("error toasted");
@@ -125,7 +84,7 @@ function Spdform(){
      e.preventDefault();
      console.log(name,number,email,password,skills,profession,cv,regno);
 
-    // if(validate(name,number,email,password,skills,profession,cv)){
+    
       if (name&&number&&email&&password&&skills&&profession&&cv&&regno){
         const res = await axios.post(`http://127.0.0.1:4000/userRegister`, {
         email: email,
@@ -139,7 +98,7 @@ function Spdform(){
       });
       console.log(res.data.user)
       if (res.data.success == false){
-        // window.alert(res.data.error)
+         window.alert(res.data.error)
       }else{
       localStorage.setItem("user", JSON.stringify(res.data.user));
       configurecaptcha();
@@ -156,44 +115,29 @@ function Spdform(){
       incorrectnumber();
     });
       }
-      }else{
+    }
+    else{
         
       }
      console.log(name,number,email,password,skills,profession,cv);
-   // }
-  }
+   }
+ 
   const onsubmitotp = (e)=>{
     const code = getotp;
     console.log(code);
     window.confirmationResult.confirm(code).then((result) => {
     const user = result.user;
     console.log(JSON.stringify(user));
-    showToastMessage();
+    
     setTimeout(() => {
       setHome(true)
     }, 2000);
   }).catch((error) => {
     console.log("error");
-    showerrorMessage();
     // <ToastContainer />
   });
   }
-//   const validate = (name,number,email,password,skills,profession,cv)=>{
-//      const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-//      const regex2 = /^[0-9]{10}$/;
-//      if(name && email && password && skills && profession && cv && number)
-//      {
-//         // if(!regex.test(email) &&  !regex2.test(number))
-//         // {
-//             return true;
-//         //}
-//      }
-//      else
-//      {
-//         window.alert("Fill all details correctly")
-//      }
-    
-//   }
+
 
   return (
       <div id ="spdform" >
@@ -236,6 +180,7 @@ function Spdform(){
         <option value="Student">Student</option>
         <option value="Professor">Professor</option>
         <option value="Developer">Developer</option>
+        <option value="Alumni">Alumni</option>
         </select>
         </Form.Field>
 
@@ -255,10 +200,6 @@ function Spdform(){
           onChange={(e) => {setotp(e.target.value)}}/>
         </Form.Field>
         <input type="submit" id = "otpbutton" onClick={onsubmitotp}></input>
-        <ToastContainer 
-         position='top-center'
-         autoClose = '3200'
-         />
           </div>
         <Form.Field>
         <input type="password"

@@ -1,7 +1,7 @@
 import React from 'react'
 import P from './Post.jpeg'
 
-function Post() {
+function Post({img}) {
   return (
     <div className='post w-[95%] my-4'>
   <div class="bg-white h-[85vh] rounded-xl shadow-lg">
@@ -9,7 +9,7 @@ function Post() {
       <h1 class="text-2xl mt-2 ml-4 font-bold text-gray-800 cursor-pointer hover:text-gray-900 transition duration-100">Lampara Look</h1>
       <p class="ml-4 mt-1 mb-2 text-gray-700 hover:underline cursor-pointer">#by Saca Tuerca</p>
     </div>
-    <img class="w-full h-[63vh] cursor-pointer" src={P} alt="" />
+    <img class="w-full h-[63vh] cursor-pointer" src={img} alt="" />
     <div class="flex p-4 justify-between">
       <div class="flex items-center space-x-2">
         <img class="w-10 rounded-full " src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg" alt="sara" />

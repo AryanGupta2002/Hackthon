@@ -69,10 +69,13 @@ function Profilespd({user}) {
         <div className="center w-[50%]">
 
 
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+        <Post img={"https://c8.alamy.com/comp/J9YY34/guy-humans-human-beings-people-folk-persons-human-human-being-laugh-J9YY34.jpg"}/>
+        <Post img={"https://c8.alamy.com/comp/J9YY34/guy-humans-human-beings-people-folk-persons-human-human-being-laugh-J9YY34.jpg"}/>
+        <Post img={"https://c8.alamy.com/comp/J9YY34/guy-humans-human-beings-people-folk-persons-human-human-being-laugh-J9YY34.jpg"}/>
+
+        {/* <Post/> */}
+        {/* <Post/> */}
+        {/* <Post/> */}
 
 
 

@@ -81,3 +81,15 @@
     background-color: rgb(236, 241, 236);
     /* background-image: linear-gradient(to top, #f9f9f9, #fff 33%); */
   }
+
+  #spdform #otphide #otpbutton{
+    width: 80px;
+    border-radius: 0px;
+    margin-left: 34%;
+  }
+
+  #spdform #otphide #otpbutton:hover{
+    background-color: #030c3c;
+    color: white;
+    
+  }

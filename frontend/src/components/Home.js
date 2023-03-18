@@ -163,10 +163,10 @@ function Home() {
         <div className="center w-[50%]">
 
 
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+        <Post img={"http://eprints.manipal.edu/images/3.jpg"}/>
+        <Post img={"http://eprints.manipal.edu/images/3.jpg"}/>
+        <Post img={"http://eprints.manipal.edu/images/3.jpg"}/>
+        <Post img={"http://eprints.manipal.edu/images/3.jpg"}/>
 
 
 
