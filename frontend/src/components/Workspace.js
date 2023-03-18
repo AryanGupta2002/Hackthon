@@ -14,6 +14,7 @@ function Workspace() {
   const [user, setUser] = useState("");
   const [companies, setCompany] = useState([]);
   const [startups, setStartup] = useState([]);
+  const [posts, setPost] = useState([]);
 
 
 
@@ -23,15 +24,17 @@ function Workspace() {
 
       const company = await axios.get("http://127.0.0.1:4000/allCompanies");
       const startup = await axios.get("http://127.0.0.1:4000/allStartups");
-
+      const post = await axios.post("http://127.0.0.1:4000/getPost",{type:"Hiring"} );
 
       setCompany(company.data.allCompanies);
       setStartup(startup.data.allStartups);
+      setPost(post.data.allPosts);
+
     };
     getData();
   }, []);
 
-
+  console.log(posts)
 
 
   return (
@@ -112,10 +115,16 @@ function Workspace() {
         </div>
 
         <div className="center w-[50%]">
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+        {
+            posts.length > 0 ? (
+              posts.map((m)=>(
+                <>
+                  <Post post={m} user= {user}/>
+                </>
+              ))
+            ):
+            <h5>No Post Found</h5>
+          }
         </div>
 
         <div className="right w-[25%]">

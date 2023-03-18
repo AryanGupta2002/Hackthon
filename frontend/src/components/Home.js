@@ -18,6 +18,7 @@ function Home() {
   const [alumnis, setAlumni] = useState([]);
   const [companies, setCompany] = useState([]);
   const [startups, setStartup] = useState([]);
+  const [posts, setPost] = useState([]);
 
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")));
@@ -28,6 +29,7 @@ function Home() {
       const alumni = await axios.get("http://127.0.0.1:4000/allAlumnis");
       const company = await axios.get("http://127.0.0.1:4000/allCompanies");
       const startup = await axios.get("http://127.0.0.1:4000/allStartups");
+      const post = await axios.post("http://127.0.0.1:4000/getPost",{type:"Achievement"} );
 
       setPeer(peer.data.allStudents);
       setDeveloper(developer.data.allDevelopers);
@@ -35,11 +37,12 @@ function Home() {
       setAlumni(alumni.data.allAlumnis);
       setCompany(company.data.allCompanies);
       setStartup(startup.data.allStartups);
+      setPost(post.data.allPosts);
     };
     getData();
   }, []);
 
-  console.log(peers,developers,alumnis,companies,professors,startups);
+  console.log(user,"user");
 
   return (
     <div id="home" className="w-[100vw] h-[100%] bg-gray-200">
@@ -129,10 +132,16 @@ function Home() {
         </div>
 
         <div className="center w-[50%]">
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          {
+            posts.length > 0 ? (
+              posts.map((m)=>(
+                <>
+                  <Post post={m} user={user}/>
+                </>
+              ))
+            ):
+            <h5>No Post Found</h5>
+          }
         </div>
 
         <div className="right w-[25%]">
