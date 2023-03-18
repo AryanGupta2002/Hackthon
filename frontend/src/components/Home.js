@@ -94,7 +94,7 @@ function Home() {
                     src={Profile}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Sauhard Gupta</p>
                 </li>
                 <hr />
                 <li className="pt-1 pb-1 flex items-center justify-center">
@@ -103,7 +103,7 @@ function Home() {
                     src={y}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Neel Tulsiani</p>
                 </li>
                 <hr />
               </ul>
@@ -137,7 +137,7 @@ function Home() {
                     src={z}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Future Sight</p>
                 </li>
                 <hr />
                 <li className="pt-1 pb-1 flex items-center justify-center">
@@ -146,7 +146,7 @@ function Home() {
                     src={x}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Nitish Yadav</p>
                 </li>
                 <hr />
                 <li className="pt-1 flex items-center justify-center">
@@ -155,7 +155,7 @@ function Home() {
                     src={Profile}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Vinayak Agarwal</p>
                 </li>
                 <hr />
                 <li className="pt-1 pb-1 flex items-center justify-center">

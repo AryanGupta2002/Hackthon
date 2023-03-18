@@ -3,7 +3,7 @@ import { Form, Button } from "semantic-ui-react";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import Logo from "./logo.jpg"
+import Logo from "./logo.webp"
 
 function Login() {
   const initialvalues = { email: "", password: "" };
