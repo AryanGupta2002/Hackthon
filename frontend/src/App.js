@@ -12,8 +12,9 @@ import ProfileCollege from './components/ProfileCollege';
 import ProfileStartup from './components/ProfileStartup';
 import Profilecompany from './components/Profilecompany';
 import Profilespd from './components/Profilespd';
+
 // import Otpinput from './Otpinput';
-function App() {
+function App(){
   return ( 
     <div  className='App'>
       <BrowserRouter>
@@ -28,6 +29,7 @@ function App() {
         <Route path='profile-company' element={<Profilecompany />} />
         <Route path='profile-college' element={<ProfileCollege />} />
         <Route path='profile-startup' element={<ProfileStartup />} />
+     
       </Routes>
       </BrowserRouter>
   
