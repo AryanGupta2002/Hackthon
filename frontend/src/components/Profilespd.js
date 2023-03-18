@@ -68,7 +68,7 @@ function Profilespd() {
                     <>
                       <li className="pt-1 py-2 flex items-center">
                         <WorkIcon />
-                        <p className="pl-2">{reUser.uniqueId}</p>
+                        <p className="pl-2">{reUser.uniqueId.toUpperCase()}</p>
                       </li>
                       <hr />
                     </>

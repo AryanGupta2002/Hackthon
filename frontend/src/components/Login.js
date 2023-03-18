@@ -52,52 +52,8 @@ function Login() {
     } else {
       window.alert("Fill Fields Carefully");
     }
-    // }
   };
-
   return (
-    // <div className="w-[100vw] h-[100vh] bg-neutral-600">
-    //   <div id="loginpage"  className=" w-[50vw] h-[70vh] m-[auto]  " >
-    //     <Form id="loginform">
-    //       <div id="sign-in-button"></div>
-    //       <Form.Field>
-    //         <input
-    //           type="text"
-    //           placeholder="E-mail"
-    //           name="email"
-    //           value={email}
-    //           onChange={(e)=>setEmail(e.target.value)}
-    //         ></input>
-    //         <span id="check">{formerror.email}</span>
-    //       </Form.Field>
-    //       <Form.Field>
-    //         <input
-    //           type="password"
-    //           placeholder="Password"
-    //           name="password"
-    //           value={password}
-    //           onChange={(e)=>setPassword(e.target.value)}
-    //         ></input>
-    //         <span id="check">{formerror.password}</span>
-    //       </Form.Field>
-    //       <Button id="subbutton" onClick={onSignInSubmit}>
-    //         Login
-    //       </Button>
-    //     </Form>
-    //     <p id="alreadyuser">
-    //       Not a user?
-    //       <span
-    //         id="loginclick"
-    //         onClick={() => {
-    //           setGotoCompanypage(true);
-    //         }}
-    //       >
-    //         Click here to signup.
-    //       </span>
-    //     </p>
-    //   </div>
-    // </div>
-
     <div class="flex min-h-full h-[100vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
       <div class=" space-y-8 bg-gray-200 p-4 rounded">
         <div className="">
