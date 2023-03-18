@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import {Link} from 'react-router-dom'
 import NavBar from "./NavBar";
 import Profile from "./dummy.png";
 import Avatar from "@mui/material/Avatar";
@@ -6,8 +7,33 @@ import Post from "./Post";
 import x from "./2.jpg";
 import y from "./3.jpg";
 import z from "./download.jpg";
+import axios from 'axios'
 
 function Workspace() {
+
+  const [user, setUser] = useState("");
+  const [companies, setCompany] = useState([]);
+  const [startups, setStartup] = useState([]);
+
+
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+    const getData = async () => {
+
+      const company = await axios.get("http://127.0.0.1:4000/allCompanies");
+      const startup = await axios.get("http://127.0.0.1:4000/allStartups");
+
+
+      setCompany(company.data.allCompanies);
+      setStartup(startup.data.allStartups);
+    };
+    getData();
+  }, []);
+
+
+
+
   return (
     <div id="workspace" className="w-[100vw] h-[100%] bg-gray-200">
       <div>
@@ -97,83 +123,51 @@ function Workspace() {
             <div className="bg-white rounded">
               <ul className="text-center content-center">
                 <p className="text-3xl font-serif">Companies</p>
-                <li className="pt-1 pb-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={z}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Future Sight</p>
-                </li>
                 <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={x}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Nitish Yadav</p>
-                </li>
-                <hr />
-                <li className="pt-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={Profile}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Vinayak Agarwal</p>
-                </li>
-                <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={z}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
-                </li>
-                <hr />
+                {companies.length > 0 ? (
+                  companies.map((m) => (
+                    <>
+                    <Link to={`/profile-spd/${m._id}`}>
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
+                        <Avatar
+                          alt="Remy Sharp"
+                          src={Profile}
+                          sx={{ width: 24, height: 24 }}
+                        />{" "}
+                        <p className="pl-2 mb-2">{m.name}</p>
+                      </li>
+                      <hr />
+                    </Link>
+                    </>
+                  ))
+                ) : (
+                  <p className="py-4">No Companies yet</p>
+                )}
               </ul>
             </div>
             <div className=" bg-white mt-8 rounded">
               <ul className="text-center content-center">
                 <p className="text-xl font-serif">Trending Startups</p>
-                <li className="pt-1 pb-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={z}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
-                </li>
                 <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center text">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={x}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
-                </li>
-                <hr />
-                <li className="pt-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={z}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
-                </li>
-                <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={x}
-                    sx={{ width: 24, height: 24 }}
-                  />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
-                </li>
-                <hr />
+                {startups.length > 0 ? (
+                  startups.map((m) => (
+                    <>
+                    <Link to={`/profile-spd/${m._id}`}>
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
+                        <Avatar
+                          alt="Remy Sharp"
+                          src={Profile}
+                          sx={{ width: 24, height: 24 }}
+                        />{" "}
+                        <p className="pl-2 mb-2">{m.name}</p>
+                      </li>
+                      </Link>
+                      <hr />
+                    </>
+                  ))
+                ) : (
+                  <p className="py-4">No Startups yet</p>
+                )}
               </ul>
             </div>
           </div>

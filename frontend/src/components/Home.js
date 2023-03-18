@@ -57,7 +57,7 @@ function Home() {
                   professors.map((m) => (
                     <>
                     <Link to={`/profile-spd/${m._id}`}>
-                      <li className="pt-1 pb-1 flex items-center justify-center">
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                         <Avatar
                           alt="Remy Sharp"
                           src={Profile}
@@ -82,7 +82,7 @@ function Home() {
                   peers.map((m) => (
                     <>
                     <Link to={`/profile-spd/${m._id}`}>
-                      <li className="pt-1 pb-1 flex items-center justify-center">
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                         <Avatar
                           alt="Remy Sharp"
                           src={Profile}
@@ -108,7 +108,7 @@ function Home() {
                   alumnis.map((m) => (
                     <>
                     <Link to={`/profile-spd/${m._id}`}>
-                      <li className="pt-1 pb-1 flex items-center justify-center">
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                         <Avatar
                           alt="Remy Sharp"
                           src={Profile}
@@ -145,7 +145,7 @@ function Home() {
                   companies.map((m) => (
                     <>
                     <Link to={`/profile-spd/${m._id}`}>
-                      <li className="pt-1 pb-1 flex items-center justify-center">
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                         <Avatar
                           alt="Remy Sharp"
                           src={Profile}
@@ -170,7 +170,7 @@ function Home() {
                   startups.map((m) => (
                     <>
                     <Link to={`/profile-spd/${m._id}`}>
-                      <li className="pt-1 pb-1 flex items-center justify-center">
+                      <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                         <Avatar
                           alt="Remy Sharp"
                           src={Profile}
@@ -191,7 +191,7 @@ function Home() {
             <div className="bg-white mt-8 rounded">
               <ul className="text-center content-center">
                 <p className="text-3xl font-serif">Colleges</p>
-                <li className="pt-1 pb-1 flex items-center justify-center">
+                <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                   <Avatar
                     alt="Remy Sharp"
                     src={z}
@@ -200,7 +200,7 @@ function Home() {
                   <p className="pl-2 mb-2">BITS Pilani</p>
                 </li>
                 <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center">
+                <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                   <Avatar
                     alt="Remy Sharp"
                     src={x}
@@ -209,7 +209,7 @@ function Home() {
                   <p className="pl-2 mb-2">NIT Suratkal</p>
                 </li>
                 <hr />
-                <li className="pt-1 flex items-center justify-center">
+                <li className="pt-1 flex items-center justify-start pl-14">
                   <Avatar
                     alt="Remy Sharp"
                     src={Profile}
@@ -218,7 +218,7 @@ function Home() {
                   <p className="pl-2 mb-2">MIT Jaipur</p>
                 </li>
                 <hr />
-                <li className="pt-1 pb-1 flex items-center justify-center">
+                <li className="pt-1 pb-1 flex items-center justify-start pl-14">
                   <Avatar
                     alt="Remy Sharp"
                     src={z}

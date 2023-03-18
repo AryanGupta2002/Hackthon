@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React,{useState, useEffect} from 'react'
 import Profile from './dummy.png'
 import {Link,Navigate} from "react-router-dom"
 
 import { Form, FormField } from "semantic-ui-react";
 
 function NavBar() {
+  const [user, setUser] = useState("");
+
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
+
+
 
   const[filename,setfilename] = useState("");
   const handleApplication =() => {
@@ -43,7 +51,7 @@ function NavBar() {
       <li class="font-semibold text-gray-700"><Link to=""> Create Post </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/home"> Home </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/workspace">Workspace</Link></li>
-      <li onClick={handleApplication}>
+      <li>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 14l9-5-9-5-9 5 9 5z" />
           <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -52,7 +60,7 @@ function NavBar() {
       </li>
       <li>
         <div>
-        <Link to="/profile-spd">
+        <Link to={`/profile-spd/${user._id}`}>
         <img src={Profile} alt="" className='w-[25px] h-[25px] rounded '/>
         </Link>
         </div>
