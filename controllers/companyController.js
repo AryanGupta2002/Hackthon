@@ -43,7 +43,7 @@ module.exports.companyRegister = async (req,res)=>{
 
   module.exports.allCompany = async (req,res) =>{
     try{
-      const allCompanies = await User.find({profession:"alumni"})
+      const allCompanies = await Company.find()
       if(allCompanies){
         return res.status(200).json({success:true, allCompanies})
       }else{

@@ -56,6 +56,7 @@ function Home() {
                 {professors.length > 0 ? (
                   professors.map((m) => (
                     <>
+                    <Link to={`/profile-spd/${m._id}`}>
                       <li className="pt-1 pb-1 flex items-center justify-center">
                         <Avatar
                           alt="Remy Sharp"
@@ -65,6 +66,7 @@ function Home() {
                         <p className="pl-2 mb-2">{m.name}</p>
                         <hr />
                       </li>
+                      </Link>
                     </>
                   ))
                 ) : (
@@ -79,6 +81,7 @@ function Home() {
                 {peers.length > 0 ? (
                   peers.map((m) => (
                     <>
+                    <Link to={`/profile-spd/${m._id}`}>
                       <li className="pt-1 pb-1 flex items-center justify-center">
                         <Avatar
                           alt="Remy Sharp"
@@ -88,6 +91,7 @@ function Home() {
                         <p className="pl-2 mb-2">{m.name}</p>
                       </li>
                       <hr />
+                      </Link>
                     </>
                   ))
                 ) : (
@@ -103,6 +107,7 @@ function Home() {
                 {alumnis.length > 0 ? (
                   alumnis.map((m) => (
                     <>
+                    <Link to={`/profile-spd/${m._id}`}>
                       <li className="pt-1 pb-1 flex items-center justify-center">
                         <Avatar
                           alt="Remy Sharp"
@@ -111,11 +116,12 @@ function Home() {
                         />{" "}
                         <p className="pl-2 mb-2">{m.name}</p>
                       </li>
+                      </Link>
                       <hr />
                     </>
                   ))
                 ) : (
-                  <p className="py-4">No Almnis yet</p>
+                  <p className="py-4">No Alumnis yet</p>
                 )}
               </ul>
             </div>
@@ -138,6 +144,7 @@ function Home() {
                 {companies.length > 0 ? (
                   companies.map((m) => (
                     <>
+                    <Link to={`/profile-spd/${m._id}`}>
                       <li className="pt-1 pb-1 flex items-center justify-center">
                         <Avatar
                           alt="Remy Sharp"
@@ -147,6 +154,7 @@ function Home() {
                         <p className="pl-2 mb-2">{m.name}</p>
                       </li>
                       <hr />
+                    </Link>
                     </>
                   ))
                 ) : (
@@ -161,6 +169,7 @@ function Home() {
                 {startups.length > 0 ? (
                   startups.map((m) => (
                     <>
+                    <Link to={`/profile-spd/${m._id}`}>
                       <li className="pt-1 pb-1 flex items-center justify-center">
                         <Avatar
                           alt="Remy Sharp"
@@ -169,6 +178,7 @@ function Home() {
                         />{" "}
                         <p className="pl-2 mb-2">{m.name}</p>
                       </li>
+                      </Link>
                       <hr />
                     </>
                   ))
