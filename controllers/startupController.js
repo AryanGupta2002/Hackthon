@@ -66,3 +66,17 @@ module.exports.startupRegister = async (req,res)=>{
       return res.status(500).json({e})
     }
   }
+
+
+  module.exports.allStartup = async (req,res) =>{
+    try{
+      const allStartups = await Startup.find({profession:"alumni"})
+      if(allStartups){
+        return res.status(200).json({success:true, allStartups})
+      }else{
+        return res.status(200).json({success:false, error:"No Companys Found"})
+      }
+    }catch(e){
+      return res.status(500).json({success:false,error:e})
+    }
+  }
