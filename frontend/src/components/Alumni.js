@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import NavBar from './NavBar'
 import Profile from "./dummy.png";
 import Avatar from "@mui/material/Avatar";
@@ -13,9 +13,34 @@ import InfoIcon from '@mui/icons-material/Info';
 import EmailIcon from '@mui/icons-material/Email';
 import ArticleIcon from '@mui/icons-material/Article';
 
-function Profilespd({user}) {
+function Alumni({user}) {
+    const email = "vinayakagarwal246@gmail.com"
+
+    const [showContact, setShowContact] = useState(false);
+    const [modal, setModal] = useState("hidden");
+
+    const handleContactMe = ()=>{
+        window.alert("Contact me: rahun.ranjan@gmail.com")
+        // if(showContact){
+        //     setModal("hidden")
+        //     setShowContact(false)
+        // }else{
+        //     setModal("")
+        //     setShowContact(true)
+        // }
+    }
+
+
   return (
     <div id='myProfile' className="w-[100vw] h-[100%] bg-gray-200">
+
+
+        <div className={`${modal} absolute w-[100vw] h-[100vh] bg-[rgb(0,0,0,0.01)]`}>
+            {/* <div className='justify-center p-8 w-[20vw] h-[20vh] bg-white left-0 right-0 top-0 bottom-0 m-auto rounded-lg '>
+                <h3>Here is my Email:</h3>
+                <p>Rahul Ranjan</p>
+            </div> */}
+        </div>
         <div>
         <NavBar />
       </div>
@@ -34,27 +59,27 @@ function Profilespd({user}) {
                
                 <li className="pt-1 py-2 flex items-center">
                   <Person2Icon />
-                  <p className="pl-2">Vinayak </p>
+                  <p className="pl-2">Ranjan Raj</p>
                 </li>
                 <hr />
                 <li className="pt-1 py-2 flex items-center">
                   <WorkIcon/>
-                  <p className="pl-2">Student</p>
+                  <p className="pl-2">Alumni</p>
                 </li>
                 <hr />
                 <li className="pt-1 py-2 flex items-center">
                   <InfoIcon/>
-                  <p className="pl-2">210907044</p>
+                  <p className="pl-2">160907044</p>
                 </li>
                 <hr />
                 <li className="pt-1 py-2 flex items-center ">
                   <EmailIcon/>
-                  <p className="pl-2 text-xs">vinayakagarwal@gmail.com</p>
+                  <p className="pl-2" onClick={handleContactMe}>Contact Me</p>
                 </li>
                 <hr />
                 <li className="pt-1 py-2 flex items-center ">
                   <ArticleIcon/>
-                  <a href="https://twitter.com/" target="_blank">
+                  <a href="https://drive.google.com/file/d/1ZAL6r_hqj_V4C98Ofe3t-gTJyBKaZ-K5/view?usp=sharing" target="_blank">
                   <p className="pl-2">Resume</p>
                   </a>
                 </li>
@@ -89,4 +114,4 @@ function Profilespd({user}) {
   )
 }
 
-export default Profilespd
+export default Alumni

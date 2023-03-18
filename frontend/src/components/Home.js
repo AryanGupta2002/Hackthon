@@ -7,6 +7,7 @@ import Post from "./Post"
 import x from "./2.jpg"
 import y from "./3.jpg"
 import z from "./download.jpg"
+import {Link} from "react-router-dom"
 
 function Home() {
   const [user, setUser] = useState("");
@@ -70,14 +71,16 @@ function Home() {
             <div className=" bg-white mt-8 rounded">
               <ul className="text-center content-center">
                 <p className="text-3xl font-serif">Peers</p>
+                <Link to="/profile-spd">
                 <li className="pt-1 pb-1 flex items-center justify-center">
                   <Avatar
                     alt="Remy Sharp"
                     src={z}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Aryan Gupta</p>
+                  <p className="pl-2 mb-2">Vinayak Agarwal</p>
                 </li>
+                </Link>
                 <hr />
                 <li className="pt-1 pb-1 flex items-center justify-center">
                   <Avatar
@@ -112,14 +115,17 @@ function Home() {
             <div className="bg-white mt-8 rounded">
               <ul className="text-center content-center">
                 <p className="text-3xl font-serif">Alumni</p>
+                <Link to="/alumni">
                 <li className="pt-1 pb-1 flex items-center justify-center">
+
                   <Avatar
                     alt="Remy Sharp"
                     src={Profile}
                     sx={{ width: 24, height: 24 }}
                   />{" "}
-                  <p className="pl-2 mb-2">Rajan Singh</p>
+                  <p className="pl-2 mb-2">Rahul Ranjan</p>
                 </li>
+                </Link>
                 <hr />
                 <li className="pt-1 pb-1 flex items-center justify-center">
                   <Avatar

@@ -13,6 +13,10 @@ import ProfileStartup from './components/ProfileStartup';
 import Profilecompany from './components/Profilecompany';
 import Profilespd from './components/Profilespd';
 // import Otpinput from './Otpinput';
+import Workspace from './components/Workspace';
+import MyProfile from './components/MyProfile';
+import Alumni from './components/Alumni';
+
 function App() {
   return ( 
     <div  className='App'>
@@ -24,8 +28,11 @@ function App() {
         <Route path='companyform' element={<Companyform />} />
         <Route exact path='startupform' element={<Startupform />} />
         <Route exact path='home' element={<Home />} />
+        <Route exact path='workspace' element={<Workspace />} />
         <Route path='profile-spd' element={<Profilespd />} />
+        <Route path='my-profile' element={<MyProfile />} />
         <Route path='profile-company' element={<Profilecompany />} />
+        <Route path='alumni' element={<Alumni />} />
         <Route path='profile-college' element={<ProfileCollege />} />
         <Route path='profile-startup' element={<ProfileStartup />} />
       </Routes>
