@@ -18,6 +18,8 @@ import axios from "axios";
 function Profilespd() {
   const [reUser, setReUser] = useState("");
   let { userId } = useParams();
+  const [posts, setPost] = useState([]);
+  
   console.log(userId);
 
   useEffect(() => {
@@ -26,7 +28,12 @@ function Profilespd() {
         let res = await axios.post("http://127.0.0.1:4000/searchUserById", {
           id: userId,
         });
+        let post = await axios.post("http://127.0.0.1:4000/getPostByID", {
+          id: userId,
+        });
         setReUser(res.data.user);
+        setPost(post.data.allPosts);
+
       } catch (e) {
         console.log(e);
       }
@@ -50,11 +57,15 @@ function Profilespd() {
               </div>
               <div className="w-[70%] mx-auto">
                 <ul className="text-center justify-start">
-                  <li className="pt-1 py-2 flex items-center">
+                  {reUser.name?(
+                    <>
+                    <li className="pt-1 py-2 flex items-center">
                     <Person2Icon />
                     <p className="pl-2">{reUser.name}</p>
                   </li>
                   <hr />
+                  </>):null
+                  }
                   {reUser.profession ? (
                     <>
                       <li className="pt-1 py-2 flex items-center">
@@ -141,10 +152,16 @@ function Profilespd() {
         </div>
 
         <div className="center w-[50%]">
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          {
+            posts.length > 0 ? (
+              posts.map((m)=>(
+                <>
+                  <Post post={m} user={reUser}/>
+                </>
+              ))
+            ):
+            <h5>No Post Found</h5>
+          }
         </div>
 
         <div className="right w-[15%]">

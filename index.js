@@ -6,6 +6,7 @@ const connect = require("./config/db");
 const userRoutes = require("./routes/userRoutes")
 const companyRoutes = require("./routes/companyRoutes")
 const startupRoutes = require("./routes/startupRoutes")
+const postRoutes = require("./routes/postRoutes")
 
 const path = require("path");
 const cookieParser = require('cookie-parser');
@@ -37,3 +38,4 @@ const server = app.listen(PORT, () => {
 app.use("/", userRoutes);
 app.use("/", companyRoutes);
 app.use("/", startupRoutes);
+app.use("/", postRoutes);
