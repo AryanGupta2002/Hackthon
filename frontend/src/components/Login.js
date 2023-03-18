@@ -3,6 +3,7 @@ import { Form, Button } from "semantic-ui-react";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import Logo from "./logo.jpg"
 
 function Login() {
   const initialvalues = { email: "", password: "" };
@@ -97,14 +98,14 @@ function Login() {
     //   </div>
     // </div>
 
-    <div class="flex min-h-full h-[100vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div class=" space-y-8">
-        <div>
-          {/* <img
-            class="mx-auto h-12 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt="Your Company"
-          /> */}
+    <div class="flex min-h-full h-[100vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+      <div class=" space-y-8 bg-gray-200 p-4 rounded">
+        <div className="">
+          <img
+            class="mx-auto h-48 w-48"
+            src={Logo}
+            alt="Easy Connect"
+          />
           <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
             Sign in to your account
           </h2>

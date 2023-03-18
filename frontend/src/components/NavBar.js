@@ -15,6 +15,7 @@ function NavBar() {
       <input class="ml-2 outline-none bg-transparent font-" type="text" name="search" id="search" placeholder="Search..." />
     </div>
     <ul class="flex items-center space-x-6">
+      <li class="font-semibold text-gray-700"><Link to="/home"> Create Post </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/home"> Home </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/workspace">Workspace</Link></li>
       <li>
