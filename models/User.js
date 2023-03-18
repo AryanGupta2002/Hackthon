@@ -30,7 +30,10 @@ const userSchema = new Schema(
     skills: {
       type: String,
     },
-
+    regno:{
+      type:Number,
+      required: true,
+    }
   },
   { timestamps: true }
 );
