@@ -1,4 +1,3 @@
-
 import './App.css';
 import ComporStrtup from './components/ComporStrtup';
 import Login from './components/Login';
@@ -12,11 +11,10 @@ import ProfileCollege from './components/ProfileCollege';
 import ProfileStartup from './components/ProfileStartup';
 import Profilecompany from './components/Profilecompany';
 import Profilespd from './components/Profilespd';
-
-// import Otpinput from './Otpinput';
 import Workspace from './components/Workspace';
 import MyProfile from './components/MyProfile';
 import Alumni from './components/Alumni';
+import Postselection from './components/Postselection';
 
 function App() {
   return ( 
@@ -35,6 +33,7 @@ function App() {
         <Route path='profile-company' element={<Profilecompany />} />
         <Route path='alumni' element={<Alumni />} />
         <Route path='profile-college' element={<ProfileCollege />} />
+        <Route path='postselection' element={<Postselection />} />
         <Route path='profile-startup' element={<ProfileStartup />} />
      
       </Routes>

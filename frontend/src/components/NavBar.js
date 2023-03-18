@@ -1,20 +1,20 @@
 import React,{useState, useEffect} from 'react'
 import Profile from './dummy.png'
 import {Link,Navigate} from "react-router-dom"
-
 import { Form, FormField } from "semantic-ui-react";
 
 function NavBar() {
   const [user, setUser] = useState("");
-
-
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
 
+  //  if(gotoPostpage)
+  //  {
+  //   return <Navigate to = "/postselection" />;
+  //  }
 
-
-  const[filename,setfilename] = useState("");
+  
   const handleApplication =() => {
     console.log("first")
     // if(app == "hidden"){
@@ -26,20 +26,6 @@ function NavBar() {
     <div id="navBar">
 <nav class="flex justify-between px-20 py-6 items-center bg-white">
   <h1 class="text-xl text-gray-800 font-bold"><Link to="/home">Easy Connect </Link></h1>
-  <div>
-    <Form>
-      <FormField>
-       <input type = "file"
-       value={filename}
-       onChange={(e) => {
-        setfilename(e.target.value);
-      }}
-       name = 'filename'
-       
-       ></input>
-      </FormField>
-    </Form>
-  </div>
   <div class="flex items-center">
     <div class="flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pt-0.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +34,7 @@ function NavBar() {
       <input class="ml-2 outline-none bg-transparent font-" type="text" name="search" id="search" placeholder="Search..." />
     </div>
     <ul class="flex items-center space-x-6">
-      <li class="font-semibold text-gray-700"><Link to=""> Create Post </Link></li>
+      <li class="font-semibold text-gray-700"><Link to="/postselection"> Create Post </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/home"> Home </Link></li>
       <li class="font-semibold text-gray-700"><Link to="/workspace">Workspace</Link></li>
       <li>
