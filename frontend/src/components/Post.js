@@ -7,9 +7,11 @@ function Post({post,user}) {
 
   const [apply, setApply] = useState(false)
   const [image, setImage] = useState("")
+  const [hide,sethide] = useState(false); 
 
-  const handlemodal = () =>{
-    
+  if(hide)
+  {
+    document.getElementById("applicant").style.display = 'block'
   }
 
   const handleApplication = async (e) =>{
@@ -27,8 +29,9 @@ function Post({post,user}) {
   return (
     <div className='post w-[95%] my-4'>
 
-    <div id="applicant" className='w-[100%] h-[100%] bg-white'>
+    <div id="applicant" className='w-[100%] h-[100%] bg-yellow-100' style={{display:'none',}}>
     {console.log(post, "post")}
+    <h3 style={{fontSize:'28px',backgroundColor:'#e4c6c6'}}>Applicants</h3>
         {post.applicants?(
         post.applicants.map((a)=>(
             <>
@@ -37,7 +40,7 @@ function Post({post,user}) {
             </ul>
           </>
         ))):(
-          <h3>NO Applicants</h3>
+          <h3>No Applicants</h3>
         )
         }
     </div>
@@ -57,13 +60,13 @@ function Post({post,user}) {
       (null)
 }      </div>
       <div class="flex space-x-2">
-        <div class="flex space-x-1 items-center">
+        <div onClick={()=>{sethide(true)}} class="flex space-x-1 items-center">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-600 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </span>
-          <span onClick={handlemodal}>Applicants</span>
+          <span class = "cursor-pointer" >Applicants</span>
         </div>
         <div class="flex space-x-1 items-center">
           <span>
