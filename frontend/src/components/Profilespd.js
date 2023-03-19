@@ -102,6 +102,12 @@ function Profilespd() {
                       <hr />
                     </>
                   ) : null}
+
+                  <li className="pt-1 py-2 flex items-center">
+                        <Person2Icon />
+                        <p className="pl-2">Credibility - 97%</p>
+                      </li>
+                      <hr />
                   {reUser.profession ? (
                     <>
                       <li className="pt-1 py-2 flex items-center">
