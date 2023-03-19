@@ -36,7 +36,7 @@ function Login() {
     console.log(password, email);
     // if(Object.keys(validate(formValues)).length === 0){
     //   console.log("first")
-    if (password && email) {
+    if (password && email){
       const res = await axios.post(`http://127.0.0.1:4000/login`, {
         email: email,
         password: password,

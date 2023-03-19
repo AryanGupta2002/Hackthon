@@ -98,7 +98,7 @@ function Spdform(){
       });
       console.log(res.data.user)
       if (res.data.success == false){
-         window.alert(res.data.error)
+        //  window.alert(res.data.error)
       }else{
       localStorage.setItem("user", JSON.stringify(res.data.user));
       configurecaptcha();
@@ -112,7 +112,8 @@ function Spdform(){
       setGotoOtppage(true);
     }).catch((error) => {
       console.log("Otp not sent")
-      incorrectnumber();
+     window.alert("Incorrect otp")
+      
     });
       }
     }
@@ -149,6 +150,7 @@ function Spdform(){
         <input type="text" 
         placeholder='Name' 
         name='name' 
+        required
         value={name}
         onChange={(e) => {setname(e.target.value)}}/>
         <span id = "check">{formerror.name}</span>
@@ -158,6 +160,7 @@ function Spdform(){
         <input type="text" 
         placeholder='Phone 000-000-0000' 
         name='number' 
+        required
         value={number}
         onChange={(e) => {setnumber(e.target.value)}}/>
          <span id = "check">{formerror.number}</span>
@@ -167,6 +170,7 @@ function Spdform(){
         <Form.Field>
         <input type="text"
          placeholder='E-mail'
+         required
           name='email' 
           value={email}
           onChange={(e) => {setemail(e.target.value)}}/>
@@ -186,6 +190,7 @@ function Spdform(){
 
         <Form.Field>
         <input type="number"
+        required
          placeholder='Registeration no.'
           name='regno' 
           value={regno}
@@ -195,6 +200,7 @@ function Spdform(){
         <Form.Field>
         <input type="number"
          placeholder='Otp'
+   
           name='regno' 
           value={getotp}
           onChange={(e) => {setotp(e.target.value)}}/>
@@ -214,6 +220,7 @@ function Spdform(){
         <Form.Field>
         <input type ="url"
          id = "cv"
+         required
           placeholder ="Link for CV"
           name='cv'
           value={cv}
@@ -224,6 +231,7 @@ function Spdform(){
         <Form.Field>
         <input type ="textarea"
          id = "skillset"
+         required
           placeholder ="Enter skills"
           name='skills'
           value={skills}
