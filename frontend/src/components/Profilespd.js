@@ -14,13 +14,14 @@ import InfoIcon from "@mui/icons-material/Info";
 import EmailIcon from "@mui/icons-material/Email";
 import ArticleIcon from "@mui/icons-material/Article";
 import axios from "axios";
+import mongoose from 'mongoose';
 
 function Profilespd() {
   const [reUser, setReUser] = useState("");
   let { userId } = useParams();
   const [posts, setPost] = useState([]);
   
-  console.log(userId);
+  // console.log(userId);
 
   useEffect(() => {
     const getUserData = async () => {
@@ -28,11 +29,14 @@ function Profilespd() {
         let res = await axios.post("http://127.0.0.1:4000/searchUserById", {
           id: userId,
         });
-        let post = await axios.post("http://127.0.0.1:4000/getPostByID", {
-          id: userId,
+        // const id = new mongoose.Types.ObjectId(userId)
+        // console.log( mongoose.Types.ObjectId() );
+        let post = await axios.post(`http://127.0.0.1:4000/getPostByID/${userId}`, {
+          id: userId ,
         });
+        console.log(post)
         setReUser(res.data.user);
-        setPost(post.data.allPosts);
+        // setPost(post.data.allPosts);
 
       } catch (e) {
         console.log(e);
@@ -44,7 +48,7 @@ function Profilespd() {
   console.log(reUser);
 
   return (
-    <div id="myProfile" className="w-[100vw] h-[100%] bg-gray-200">
+    <div id="myProfile" className="w-[100vw] min:h-[100%] h-[100vh] bg-gray-200">
       <div>
         <NavBar />
       </div>
@@ -151,7 +155,7 @@ function Profilespd() {
           </div>
         </div>
 
-        <div className="center w-[50%]">
+        {/* <div className="center w-[50%]">
           {
             posts.length > 0 ? (
               posts.map((m)=>(
@@ -160,9 +164,9 @@ function Profilespd() {
                 </>
               ))
             ):
-            <h5>No Post Found</h5>
+            <h5>No Post Made</h5>
           }
-        </div>
+        </div> */}
 
         <div className="right w-[15%]">
           <div className="w-[80%] m-4 "></div>

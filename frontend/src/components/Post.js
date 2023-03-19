@@ -5,6 +5,7 @@ import axios from 'axios'
 function Post({post,user}) {
 
   const [apply, setApply] = useState(false)
+  const [image, setImage] = useState("")
 
   const handleApplication = async (e) =>{
     e.preventDefault()
@@ -17,6 +18,7 @@ function Post({post,user}) {
       document.getElementById("Button").disabled = true;
     setApply(true)
   }
+  
   return (
     <div className='post w-[95%] my-4'>
   <div class="bg-white h-[85vh] rounded-xl shadow-lg">
@@ -24,7 +26,7 @@ function Post({post,user}) {
       <h1 class="text-2xl mt-2 ml-4 font-bold text-gray-800 cursor-pointer hover:text-gray-900 transition duration-100">{post.name}</h1>
       <p class="ml-4 mt-1 mb-2 text-gray-700 hover:underline cursor-pointer">#{post.type}</p>
     </div>
-    <img class="w-full h-[63vh] cursor-pointer" src={post.link} alt="" />
+    <img class="w-full h-[63vh] cursor-pointer"  src={post.link}  alt="" />
     <div class="flex p-4 justify-between">
       <div class="flex items-center space-x-2">
       {post.type =="Hiring"?(

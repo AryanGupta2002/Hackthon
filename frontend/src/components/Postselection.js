@@ -1,16 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Form , FormField } from 'semantic-ui-react';
-// import './postselectionstylesheet.css';
+import axios from 'axios'
+import {Navigate} from "react-router-dom"
+
+
+
 function Postselection(){
     const[filename,setfilename] = useState("");
     const[link,setLink] = useState("hi");
     const[checkclick,setcheckclick] = useState(false);
-    const[posttype,setposttype] = useState("Achievements");
-    const handleSubmit  = () =>
+    const[posttype,setposttype] = useState("Achievement");
+    const[user,setUser] = useState("Achievement");
+    const[ toHome, setToHome] = useState(false)
+    
+
+
+
+
+    useEffect(() => {
+      setUser(JSON.parse(localStorage.getItem("user")));
+    }, []);
+
+
+    if(toHome){
+      return <Navigate to="/home"/>
+    }
+
+    const handleSubmit  = async () =>
     {
         if(checkclick)
         {
-        console.log(link,posttype)
+        const res = await axios.post(`http://127.0.0.1:4000/createGroupPost`, {
+          link: link,
+          type: posttype,
+          userId: user._id,
+          name: user.name
+        });
+        if(res.data.success == true){
+          setToHome(true)
+        }
+
+        
         }
         else
         {
@@ -44,7 +74,7 @@ function Postselection(){
         <label for="post" id ="postlabel">Type of post</label>
         <select id="posttype" name="posttype"  
         value={posttype} onChange = {(e) => {setposttype(e.target.value)}}>
-        <option value="Updates">Achievements</option>
+        <option value="Achievement">Achievement</option>
         <option value="Hiring">Hiring</option>
         </select>
         </Form.Field>
