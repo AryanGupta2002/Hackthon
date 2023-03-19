@@ -73,6 +73,7 @@ function Startupform(){
         <p id = "signup">Sign up !</p>
         <input type="text" 
         placeholder='Name' 
+        required
         name='name' 
         value={name}
         onChange={(e) => {setname(e.target.value)}}/>
@@ -82,6 +83,7 @@ function Startupform(){
         <Form.Field>
         <input type="number" 
         placeholder='Team Size' 
+        required
         name='number' 
         value={teamSize}
         onChange={(e) => {setteamSize(e.target.value)}}/>
@@ -91,6 +93,7 @@ function Startupform(){
 
         <Form.Field>
         <input type="text"
+        required
          placeholder='E-mail'
           name='email' 
           value={email}
@@ -102,6 +105,7 @@ function Startupform(){
         <input type="password"
          placeholder='Password'
           name='password' 
+          required
           value={password}
           onChange={(e) => {setpassword(e.target.value)}}/>
            <span id = "check">{formerror.password}</span>
@@ -113,6 +117,7 @@ function Startupform(){
           placeholder ="Domain"
           name='domain'
           value={domain}
+          required
           onChange={(e) => {setdomain(e.target.value)}}/>
             <span id = "check">{formerror.cv}</span>
         </Form.Field>
@@ -121,6 +126,7 @@ function Startupform(){
         <input type ="text"
           placeholder ="UniqueId"
           name='domain'
+          required
           value={uniqueId}
           onChange={(e) => {setuniqueId(e.target.value)}}/>
             <span id = "check">{formerror.cv}</span>
