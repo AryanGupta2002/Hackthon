@@ -69,7 +69,7 @@ module.exports.getPostById = async (req,res)=>{
     console.log(id)
     
     try{
-        const post = await Post.findById({userId:id})
+        const post = await Post.find({userId:id})
         if(!post){
             return res.status(200).json({success:false, error:"Have't Posted Yet" });
         }

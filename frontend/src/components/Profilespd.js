@@ -53,7 +53,7 @@ function Profilespd() {
         });
         console.log(post)
         // setReUser(res.data.user);
-        // setPost(post.data.allPosts);
+        setPost(post.data.allPosts);
 
       } catch (e) {
         console.log(e);
@@ -62,10 +62,10 @@ function Profilespd() {
     getPostData();
   }, [userId]);
 
-  console.log(reUser);
+  console.log(posts);
 
   return (
-    <div id="myProfile" className="w-[100vw] min:h-[100%] h-[100vh] bg-gray-200">
+    <div id="myProfile" className="w-[100vw] h-[100%] bg-gray-200">
       <div>
         <NavBar />
       </div>
@@ -173,9 +173,7 @@ function Profilespd() {
         </div>
 
         <div className="center w-[50%]">
-
-        <div className="w-[30vw] h-[20vh] text-4xl mt-10">No Post Found</div>
-          {/* {
+          {
             posts.length > 0 ? (
               posts.map((m)=>(
                 <>
@@ -184,7 +182,7 @@ function Profilespd() {
               ))
             ):
             <h5>No Post Made</h5>
-          } */}
+          }
         </div>
 
         <div className="right w-[15%]">
