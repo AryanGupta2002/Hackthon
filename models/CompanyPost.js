@@ -18,7 +18,7 @@ const postSchema = new Schema(
     },
     userId:{
       type:Schema.Types.ObjectId,
-      ref:'user'
+      ref:'company'
     },
     applicants:{
       type: Array,

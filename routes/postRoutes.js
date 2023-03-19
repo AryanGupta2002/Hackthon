@@ -4,7 +4,7 @@ const {createGroupPost, getPost, addApplicant,getPostById} = require("../control
 
 router.post("/createGroupPost", createGroupPost);
 router.post("/getPost",getPost );
-router.post("/getPostById",getPostById );
+router.post("/getPostById/:id",getPostById );
 router.post("/addApplicant",addApplicant );
 
 module.exports = router;

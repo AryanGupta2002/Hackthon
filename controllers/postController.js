@@ -2,6 +2,9 @@ const User = require("../models/User")
 const Startup = require("../models/Startup")
 const Company = require("../models/Company")
 const Post = require("../models/CompanyPost")
+// const { Types } = require('mongoose');
+var mongoose = require('mongoose');
+
 
 
 
@@ -62,12 +65,15 @@ module.exports.addApplicant = async (req,res)=>{
 
 
 module.exports.getPostById = async (req,res)=>{
-    const {id, link, name } = req.body
+    const {id } = req.params
+    console.log(id)
+    
     try{
-        const post = await Post.findById({_id: id})
+        const post = await Post.findById({userId:id})
         if(!post){
             return res.status(200).json({success:false, error:"Have't Posted Yet" });
         }
+        // return res.status(200).json({ success:true });
         return res.json({ success:true, allPosts:post });
     }catch(e){
         return res.status(500).json({error:e, success: false})
