@@ -71,6 +71,7 @@ function Companyform() {
             type="text"
             placeholder="Name"
             name="name"
+            required
             value={name}
             onChange={(e) => {
               setname(e.target.value);
@@ -84,6 +85,7 @@ function Companyform() {
             type="url"
             placeholder="Website URL"
             name="number"
+            required
             value={website}
             onChange={(e) => {
               setwebsite(e.target.value);
@@ -96,6 +98,7 @@ function Companyform() {
           <input
             type="text"
             placeholder="E-mail"
+            required
             name="email"
             value={email}
             onChange={(e) => {
@@ -109,6 +112,7 @@ function Companyform() {
           <input
             type="password"
             placeholder="Password"
+            required
             name="password"
             value={password}
             onChange={(e) => {
@@ -122,6 +126,7 @@ function Companyform() {
           <input
             type="text"
             placeholder="Domain"
+            required
             name="domain"
             value={domain}
             onChange={(e) => {
