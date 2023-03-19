@@ -43,6 +43,25 @@ function Profilespd() {
     getUserData();
   }, [userId]);
 
+
+
+  useEffect(() => {
+    const getPostData = async () => {
+      try {
+        let post = await axios.post(`http://127.0.0.1:4000/getPostByID/${userId}`, {
+          id: userId ,
+        });
+        console.log(post)
+        // setReUser(res.data.user);
+        // setPost(post.data.allPosts);
+
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    getPostData();
+  }, [userId]);
+
   console.log(reUser);
 
   return (
