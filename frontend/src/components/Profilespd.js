@@ -29,12 +29,10 @@ function Profilespd() {
         let res = await axios.post("http://127.0.0.1:4000/searchUserById", {
           id: userId,
         });
-        // const id = new mongoose.Types.ObjectId(userId)
-        // console.log( mongoose.Types.ObjectId() );
-        let post = await axios.post(`http://127.0.0.1:4000/getPostByID/${userId}`, {
-          id: userId ,
-        });
-        console.log(post)
+        // let post = await axios.post(`http://127.0.0.1:4000/getPostByID/${userId}`, {
+        //   id: userId ,
+        // });
+        // console.log(post)
         setReUser(res.data.user);
         // setPost(post.data.allPosts);
 
@@ -155,8 +153,10 @@ function Profilespd() {
           </div>
         </div>
 
-        {/* <div className="center w-[50%]">
-          {
+        <div className="center w-[50%]">
+
+        <div className="w-[30vw] h-[20vh] text-4xl mt-10">No Post Found</div>
+          {/* {
             posts.length > 0 ? (
               posts.map((m)=>(
                 <>
@@ -165,8 +165,8 @@ function Profilespd() {
               ))
             ):
             <h5>No Post Made</h5>
-          }
-        </div> */}
+          } */}
+        </div>
 
         <div className="right w-[15%]">
           <div className="w-[80%] m-4 "></div>
