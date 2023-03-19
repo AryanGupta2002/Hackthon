@@ -24,7 +24,7 @@ function Companyform() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if(validate(name,number,email,password,skills,profession,cv)){
-    if (name && website && email && password && domain ) {
+    if (name && website && email && password && domain) {
       const res = await axios.post(`http://127.0.0.1:4000/companyRegister`, {
         email: email,
         name:name,
