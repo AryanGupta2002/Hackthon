@@ -7,6 +7,7 @@ import Post from "./Post";
 import x from "./2.jpg";
 import y from "./3.jpg";
 import z from "./download.jpg";
+import "./tooltipstyle.css";
 import Other from "./3.jpg";
 import Person2Icon from "@mui/icons-material/Person2";
 import WorkIcon from "@mui/icons-material/Work";
@@ -212,22 +213,22 @@ function Profilespd() {
               <ul className="">
                 <li className="pt-1 py-2 flex items-center">
                   <WorkIcon />
-                  <p className="pl-2">Resources</p>
+                  <p id = 'tooltip' className="pl-2">Resources<span id="tooltiptext">Mac m1 , LAN connection.</span></p>
                   <hr />
                 </li>
                 <li className="pt-1 py-2 flex items-center">
                   <WorkIcon />
-                  <p className="pl-2">Target</p>
+                  <p id = 'tooltip'className="pl-2">Target<span id="tooltiptext">Phase 2 before 1st April.</span></p>
                   <hr />
                 </li>
                 <li className="pt-1 py-2 flex items-center">
                   <WorkIcon />
-                  <p className="pl-2">Funds</p>
+                  <p id = 'tooltip' className="pl-2">Funds<span id="tooltiptext">2,00,000</span></p>
                   <hr />
                 </li>
                 <li className="pt-1 py-2 flex items-center">
                   <WorkIcon />
-                  <p className="pl-2">Associates</p>
+                  <p id = 'tooltip' className="pl-2">Associates<span id="tooltiptext">Aryan Gupta , Neel Tulsiani , Sohard Gupa</span></p>
                   <hr />
                 </li>
               </ul>
